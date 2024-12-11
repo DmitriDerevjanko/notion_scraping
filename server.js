@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import fetch from 'node-fetch';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import exceljs from 'exceljs';
@@ -148,7 +148,7 @@ async function processData(data) {
         
 
         try {
-            //await sleep(3000);
+            await sleep(3000);
             console.log('Normalizing company name:', newRow[0]);
             newRow[0] = normalizeCompanyName(newRow[0]);
             const response = await fetch(url);
